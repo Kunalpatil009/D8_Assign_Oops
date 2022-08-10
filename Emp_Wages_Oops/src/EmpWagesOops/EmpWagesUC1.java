@@ -1,16 +1,16 @@
 package EmpWagesOops;
 
 public class EmpWagesUC1 {
-        static void emp_Check() {
-            System.out.println("Welcome To Employee Wages Computation Programme");
-            int WAGESPERHOURS = 20;
-            int FULLDAYHOURS = 8;
-            int PARTTIMEHOURS = 4;
-            double emp = Math.floor(Math.random() * 10) % 3;
+    static int WAGESPERHOURS = 20;
+    static int FULLDAYHOURS = 8;
+    static int PARTTIMEHOURS = 4;
+    static int TotalWages = 0;
+    static void emp_Check() {
+        double emp = Math.floor(Math.random() * 10) % 3;
             switch ((int) emp){
                 case 1:
                     System.out.println("Employee is Present For Full Time");
-               int TotalWages = WAGESPERHOURS * FULLDAYHOURS;
+                TotalWages = WAGESPERHOURS * FULLDAYHOURS;
                 System.out.println( "TotalWages :" + TotalWages);
                 break;
                 case 2:
@@ -22,6 +22,19 @@ public class EmpWagesUC1 {
                     System.out.println("Employee is Absent");
                 }
             }
+            static int WAGES;
+             static int monthlyWages(int workingDaysPerMonth) {
+            int day = 1;
+                while ( day <= workingDaysPerMonth) {
+                    System.out.println("day :" + day);
+                    emp_Check();
+                    WAGES += TotalWages;
+                    day++;
+
+                }
+                 System.out.println("Total Monthly Wages :" +WAGES);
+                return workingDaysPerMonth;
+            }
 //            if (emp == 1) {
 //                System.out.println("Employee is Present");
 //               int TotalWages = WAGESPERHOURS * FULLDAYHOURS;
@@ -30,6 +43,9 @@ public class EmpWagesUC1 {
 //                System.out.println("Employee is Absent");
 //            }
     public static void main(String[] Kunal) {
-            emp_Check();
+        System.out.println("Welcome To Employee Wages Computation Programme");
+//            emp_Check();
+            monthlyWages(20) ;
+
     }
 }
